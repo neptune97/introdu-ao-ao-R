@@ -205,9 +205,8 @@ library (haven) #para formatos mais específicos como .sas e .sav
 
 setwd("~/intro_R_MQ/")
 
-bd <- read_csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main/Aula%2001/Ask%20A%20Manager%20Salary%20Survey%202021%20(Responses)%20-%20Form%20Responses%201.csv?token=GHSAT0AAAAAABZ5DYDTVEOXM35TJ4I4OQ2YY2MVZAA")
-db <- read.csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main/Aula%2001/pokemon.csv?token=GHSAT0AAAAAABZ5DYDTQ26VVNKW3J6T5NUWY2MV2SA")
-
+bd <- read_csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main/Aula%2001/Ask%20A%20Manager%20Salary%20Survey%202021%20(Responses)%20-%20Form%20Responses%201.csv")
+db <- read.csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main/Aula%2001/pokemon.csv")
 
 
 # SUA VEZ - Instale os pacotes usados na seção anterior no seu PC ---------
