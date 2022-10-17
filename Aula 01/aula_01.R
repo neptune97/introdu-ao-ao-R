@@ -41,9 +41,6 @@
 
 
 
-
-
-
 # Vectors ------------------------------------------------------------------
 
 a <- 2  #se insere valores usando uma seta apontada para a variável
@@ -57,7 +54,7 @@ A <- "azul" # cuidado com o nome das suas variáveis
 
 a <- c("azul", "verde", "laranja") #vetores podem conter mais de um item com o comando c()
 b <- c(1, 2, 3, 4, 5)
-c <- c("roxo", a) # é possível acrescentar elementos a vetores
+c <- c("roxo", a)
 
 b[3]  #é possível achar elementos dentro de vetores usando []
 
@@ -85,13 +82,13 @@ x <- rnorm(1:100) # este comando gera números aleatórios dentro da escala Z
 a <- 1    #vetores núméricos pertencem a classe "numeric"
 b <- c("um", "dois", "três") # vetores de texto pertencem a classe "character"
 a <- TRUE #vetores lógicos pertencem a classe "logical"
-a <- factor(b) #dados categóricos pertencem a classe "factors"
+a <- factor(b) #vetores categóricos pertencem a classe "factors"
 a <- NA #missing data é chamada de NA e possue uma classe própria
 a <- list (12, "laranja", 470) #um vetor pode ser agregado em nívels por meio de listas
 
 class() #o comando class() revela a classe de um objeto
 as.nomedaclasse ()#transforma as classes no R
-str() #ajuda a entender a estrutura do objeto
+str() #ajuda a entender a estrutura do objeti
 
 
 # SUA VEZ - Qual a classe do objeto abaixo? -------------------------------
@@ -184,7 +181,6 @@ nrow () #número de linhas
 ncol () #núnero de colunas
 names () #nomes das colunas
 colnames() #nome das colunas alternativo
-subset() #ajuda a seccionar o banco em parte
 
 colnames()[] <- "" #trocar o nome de uma coluna
 
