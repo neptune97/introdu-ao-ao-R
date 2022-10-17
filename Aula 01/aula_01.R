@@ -60,7 +60,7 @@ b[3]  #é possível achar elementos dentro de vetores usando []
 
 
 
-# Ache o 15 elemento do vetor abaixo --------------------------------------
+# SUA VEZ - Ache o 15 elemento dos dois vetores abaixo --------------------
 
 set.seed(1)       # este comando controla a aleatorização de itens
 v <- sample(1:100) # este comando gera números aleatórios
@@ -143,7 +143,8 @@ q() #fecha o R
 
 
 
-# Sua vez - Ache a mediana do vetor abaixo --------------------------------
+
+# SUA VEZ - Ache a mediana do vetor abaixo --------------------------------
 
 x <- sample (20:60)
 
@@ -210,7 +211,7 @@ db <- read.csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main
 
 
 
-# SUA VEZ - Instale os pacotes usados na seção anterior no seu PC ---------
+# SUA VEZ - Instale os pacotes usados na seção anterior em seu PC ---------
 
 
 
