@@ -41,6 +41,9 @@
 
 
 
+
+
+
 # Vectors ------------------------------------------------------------------
 
 a <- 2  #se insere valores usando uma seta apontada para a variável
@@ -54,13 +57,13 @@ A <- "azul" # cuidado com o nome das suas variáveis
 
 a <- c("azul", "verde", "laranja") #vetores podem conter mais de um item com o comando c()
 b <- c(1, 2, 3, 4, 5)
-c <- c("roxo", a)
+c <- c("roxo", a) # é possível acrescentar elementos a vetores
 
 b[3]  #é possível achar elementos dentro de vetores usando []
 
 
 
-# SUA VEZ - Ache o 15 elemento dos dois vetores abaixo --------------------
+# Ache o 15 elemento do vetor abaixo --------------------------------------
 
 set.seed(1)       # este comando controla a aleatorização de itens
 v <- sample(1:100) # este comando gera números aleatórios
@@ -82,13 +85,13 @@ x <- rnorm(1:100) # este comando gera números aleatórios dentro da escala Z
 a <- 1    #vetores núméricos pertencem a classe "numeric"
 b <- c("um", "dois", "três") # vetores de texto pertencem a classe "character"
 a <- TRUE #vetores lógicos pertencem a classe "logical"
-a <- factor(b) #vetores categóricos pertencem a classe "factors"
+a <- factor(b) #dados categóricos pertencem a classe "factors"
 a <- NA #missing data é chamada de NA e possue uma classe própria
 a <- list (12, "laranja", 470) #um vetor pode ser agregado em nívels por meio de listas
 
 class() #o comando class() revela a classe de um objeto
 as.nomedaclasse ()#transforma as classes no R
-str() #ajuda a entender a estrutura do objeti
+str() #ajuda a entender a estrutura do objeto
 
 
 # SUA VEZ - Qual a classe do objeto abaixo? -------------------------------
@@ -143,8 +146,7 @@ q() #fecha o R
 
 
 
-
-# SUA VEZ - Ache a mediana do vetor abaixo --------------------------------
+# Sua vez - Ache a mediana do vetor abaixo --------------------------------
 
 x <- sample (20:60)
 
@@ -182,6 +184,7 @@ nrow () #número de linhas
 ncol () #núnero de colunas
 names () #nomes das colunas
 colnames() #nome das colunas alternativo
+subset() #ajuda a seccionar o banco em parte
 
 colnames()[] <- "" #trocar o nome de uma coluna
 
@@ -211,7 +214,7 @@ db <- read.csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main
 
 
 
-# SUA VEZ - Instale os pacotes usados na seção anterior em seu PC ---------
+# SUA VEZ - Instale os pacotes usados na seção anterior no seu PC ---------
 
 
 
