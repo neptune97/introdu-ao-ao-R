@@ -135,6 +135,7 @@ summary() # resumos
 class () #classe de objetos
 ls() #lista todos os objetos atuais do ambiente de trabalho
 rm () # apaga objetos do ambiente do trabalho
+setwd() #muda a localização de onde o R procura arquivos
 rm(list = ls()) #apaga TODOS os objtos do ambiente de trabalho
 library () # abre pacotes
 install.packages() #instala pacotes
@@ -198,15 +199,14 @@ colnames()[] <- "" #trocar o nome de uma coluna
 
 # Importando Bancos de Dados ----------------------------------------------
 
-library (readr)
-library (readxl)
-library (haven)
+library (readr) #para planilhas em .csv, .txt, .tsv 
+library (readxl) #para planilhas em .xls e .xlsx
+library (haven) #para formatos mais específicos como .sas e .sav
 
+setwd("~/intro_R_MQ/")
 
-
-
-
-
+bd <- read_csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main/Aula%2001/Ask%20A%20Manager%20Salary%20Survey%202021%20(Responses)%20-%20Form%20Responses%201.csv?token=GHSAT0AAAAAABZ5DYDTVEOXM35TJ4I4OQ2YY2MVZAA")
+db <- read.csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/main/Aula%2001/pokemon.csv?token=GHSAT0AAAAAABZ5DYDTQ26VVNKW3J6T5NUWY2MV2SA")
 
 
 
