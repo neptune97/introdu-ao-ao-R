@@ -125,6 +125,16 @@ pkm %>%
 
 
 
+# arrange -----------------------------------------------------------------
+
+pkm %>% 
+  select(generation, type1, attack) %>% 
+  group_by(generation, type1) %>% 
+  summarise(mean = mean(attack)) %>% 
+  arrange (mean)
+
+
+
 
 
 # ungroup -----------------------------------------------------------------
