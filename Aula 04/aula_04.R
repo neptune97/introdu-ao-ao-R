@@ -32,12 +32,13 @@ pkm <- read.csv("https://raw.githubusercontent.com/neptune97/introdu-ao-ao-R/mai
 
 # EDA ---------------------------------------------------------------------
 
-#install.packages ("gtsummary")
-#install.packages ("skimr")
-#install.packages ("frequency")
-#library(skimr)
-#library(gtsummary)
-#library ("frequency")
+# install.packages ("gtsummary")
+# install.packages ("skimr")
+# install.packages ("frequency")
+
+library(skimr)
+library(gtsummary)
+library (frequency)
 
 
 # skimr -------------------------------------------------------------------
@@ -45,7 +46,6 @@ pkm %>%
   select (generation, 
           is_legendary, attack,
           defense) %>% 
-  group_by(generation) %>% 
   skim()
 
 
@@ -55,24 +55,21 @@ pkm %>%
   select (generation, 
           is_legendary, attack,
           defense) %>% 
-  tbl_summary(
-    by = generation
-  )
+  tbl_summary()
   
 
 # freq --------------------------------------------------------------------
 
-options(frequency_open_output = TRUE)
 freq(ask)
 
 
 
 # summarytools ------------------------------------------------------------
 
-#install.packages("summarytools")
-#library(summarytools)
+# install.packages("summarytools")
+# library(summarytools)
 
-freq(ask[11])
+freq(pkm)
 
 
 
@@ -96,45 +93,42 @@ x <- ask %>%
          `What country do you work in?`) %>% 
   rename (idade = `How old are you?`,
           pais = `What country do you work in?`) %>% 
-  filter (pais == "Brazil" | pais == "USA") %>% 
+  filter (pais == "Canada" | pais == "USA") %>% 
   mutate (
     idade = if_else(idade == "25-34" | idade == "35-44", "Sim", "Não"),
   )
 
 
 
-chisq.test(x$idade, x$pais, correct=FALSE)
+
+a <- chisq.test(x$idade, x$pais, correct=TRUE)
+
+
+a$expected # para checar valores esperados
+a$observed # para checar valores observados
 
 
 
 
 # ANOVA -------------------------------------------------------------------
 
-a <- pkm %>% 
-  filter (type1 == "water" | type1 == "fire" | type1 == "grass") %>%
+pkm %>% 
+  filter (type1 == "normal" | type1 == "psychic" | type1 == "dragon") %>%
   mutate (type1 = factor(type1)) %>% 
   select (type1, attack, defense) %>% 
-  ggplot(aes (x = type1, y = defense)) +
+  ggplot(aes (x = type1, y = attack)) +
   geom_boxplot()
   
 
-anova <- aov (defense ~ type1, data = a)
+anova <- aov (attack ~ type1, data = a) #comando da ANOVA
 
-summary (anova)
+summary (anova) #ver os resultados
 
-
-
-pkm %>% 
-  filter (type1 == "water" | type1 == "fire" | type1 == "grass") %>%
-  mutate (type1 = factor(type1)) %>% 
-  select (type1, attack, defense) %>% 
-  ggplot(aes (x = type1, y = defense)) +
-  geom_boxplot()
+TukeyHSD(anova) #Post-Hoc
 
 
 
 # matriz de correlação ----------------------------------------------------
-
 
 stats <- pkm %>% 
   select(attack, sp_attack, sp_defense, 
@@ -145,13 +139,12 @@ x <- cor(stats)
 
 
 #install.packages("corrplot")
-#library (corrplot)
+library (corrplot)
 
 corrplot(x)
 
 
 # Regressão ---------------------------------------------------------------
-
 # linear simples ----------------------------------------------------------
 
 reg <- lm (base_happiness ~ is_legendary, 
@@ -184,23 +177,22 @@ reg3 <- glm (is_legendary ~ height_m + attack + base_happiness,
              data = pkm)
 
 
-
+summary (reg3)
 
 
 # Fatorial ----------------------------------------------------------------
 
 
-#install.packages("psych")
-library (psych)
+# install.packages("psych")
+# library (psych)
 
 bfi 
 
 bfi <- bfi %>% 
   drop_na()
 
-x <- cor(bfi)
+data <- cor(bfi)
 
-fa <- fa(r = x, nfactors = 2)
-
+fa <- fa(r = data, nfactors = 6)
 
 
